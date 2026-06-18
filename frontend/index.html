@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContextCart — Smart Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo">⚡ ContextCart</span>
+      <span class="tagline">Intent-Aware Shopping</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Shop</a>
+      <a href="dashboard.html">📊 Marketer Dashboard</a>
+    </div>
+    <div class="session-badge">Session: <span id="sessionDisplay">—</span></div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>We know what you want<br><span class="gradient-text">before you do.</span></h1>
+      <p>ContextCart watches how you browse — hover, scroll, revisit — and recommends products in real time. No search needed.</p>
+    </div>
+    <div class="intent-meter">
+      <div class="meter-title">🧠 Live Intent Activity</div>
+      <div id="intentBars" class="intent-bars"></div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDATIONS PANEL -->
+  <section class="section">
+    <div class="section-header">
+      <h2>✨ Recommended For You <span class="live-badge">LIVE</span></h2>
+      <p class="section-sub">Updates as you browse the catalog below</p>
+    </div>
+    <div id="recommendationsGrid" class="product-grid recommendations-grid">
+      <div class="empty-state">Start browsing below — recommendations appear here instantly.</div>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTERS -->
+  <section class="section">
+    <div class="section-header">
+      <h2>🛍️ Browse Catalog</h2>
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="Electronics">Electronics</button>
+        <button class="filter-btn" data-cat="Fashion">Fashion</button>
+        <button class="filter-btn" data-cat="Home & Kitchen">Home & Kitchen</button>
+        <button class="filter-btn" data-cat="Books">Books</button>
+        <button class="filter-btn" data-cat="Sports & Fitness">Sports & Fitness</button>
+      </div>
+    </div>
+    <div id="catalogGrid" class="product-grid"></div>
+  </section>
+
+  <!-- BEHAVIOR LOG (debug panel) -->
+  <section class="section">
+    <details class="debug-panel">
+      <summary>🔬 Live Behavior Signal Log</summary>
+      <div id="behaviorLog" class="behavior-log"></div>
+    </details>
+  </section>
+
+  <footer class="footer">
+    <p>ContextCart · Built for Epsilon TeXpedition Hackathon 2026 · Real-time intent prediction from micro-behaviors</p>
+  </footer>
+
+  <script src="tracker.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

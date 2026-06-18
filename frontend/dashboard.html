@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContextCart — Marketer Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body class="dark-page">
+
+  <nav class="navbar dark-nav">
+    <div class="nav-brand">
+      <span class="logo">⚡ ContextCart</span>
+      <span class="tagline">Marketer Dashboard</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">← Back to Shop</a>
+    </div>
+    <div class="session-badge">Live Refresh: <span id="refreshCountdown">5s</span></div>
+  </nav>
+
+  <div class="dashboard-container">
+
+    <div class="dash-header">
+      <h1>📊 Real-Time Intent Dashboard</h1>
+      <p>Live view of what users are gravitating toward — updated every 5 seconds.</p>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-value" id="kpiSessions">0</div>
+        <div class="kpi-label">Active Sessions</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value" id="kpiTopCat">—</div>
+        <div class="kpi-label">Hottest Category</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value" id="kpiAvgScore">0%</div>
+        <div class="kpi-label">Avg Intent Score</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value" id="kpiEvents">0</div>
+        <div class="kpi-label">Events Processed</div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <h3>Category Intent Heatmap</h3>
+        <canvas id="intentBarChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Intent Score Over Time</h3>
+        <canvas id="intentLineChart"></canvas>
+      </div>
+    </div>
+
+    <!-- SESSION TABLE -->
+    <div class="table-card">
+      <h3>Active Session Breakdown</h3>
+      <table class="session-table">
+        <thead>
+          <tr>
+            <th>Session ID</th>
+            <th>Electronics</th>
+            <th>Fashion</th>
+            <th>Home & Kitchen</th>
+            <th>Books</th>
+            <th>Sports & Fitness</th>
+            <th>Top Interest</th>
+          </tr>
+        </thead>
+        <tbody id="sessionTableBody">
+          <tr><td colspan="7" class="empty-row">No sessions yet — open the shop and browse.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MARKETER INSIGHT -->
+    <div class="insight-card" id="insightCard">
+      <div class="insight-icon">💡</div>
+      <div class="insight-text" id="insightText">Waiting for user activity...</div>
+    </div>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
