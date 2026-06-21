@@ -125,5 +125,5 @@ The frontend works in **demo mode** even if the backend is offline — it comput
 
 ## Built by
 
-Team — VIT-AP University  
+Sahithya Lakku — VIT-AP University  
 Epsilon TeXpedition 2026
